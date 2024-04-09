@@ -58,7 +58,7 @@ function handleTicket(span2, data) {
       span2.textContent = count;
     }
     console.log(data.id)
-    fetch(` https://json-api-yf7x.onrender.com/films${data.id}`,{
+    fetch(` https://json-api-yf7x.onrender.com/films/${data.id}`,{
         method:"PATCH",
         headers:{
             "Content-Type": "application/json"  
@@ -73,7 +73,7 @@ function handleTicket(span2, data) {
   }
 //adding a delete button to the movie titles 
   function handleDelete(movie){
-    fetch(` https://json-api-yf7x.onrender.com/films${movie.id}`,{
+    fetch(` https://json-api-yf7x.onrender.com/films/${movie.id}`,{
         method:"DELETE"
     })
     .then(res=>res.json)
