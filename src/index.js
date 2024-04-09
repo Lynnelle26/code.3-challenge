@@ -1,6 +1,6 @@
 //accessing the movie titles using fetch
 function moviesArray(){
-    fetch(" http://localhost:7000/films")
+    fetch(" https://json-api-yf7x.onrender.com/films")
     .then(res=>res.json())
     .then(moviesArray=>{
         displayMovieTitles(moviesArray)
@@ -58,7 +58,7 @@ function handleTicket(span2, data) {
       span2.textContent = count;
     }
     console.log(data.id)
-    fetch(` http://localhost:7000/films/${data.id}`,{
+    fetch(` https://json-api-yf7x.onrender.com/films${data.id}`,{
         method:"PATCH",
         headers:{
             "Content-Type": "application/json"  
@@ -73,7 +73,7 @@ function handleTicket(span2, data) {
   }
 //adding a delete button to the movie titles 
   function handleDelete(movie){
-    fetch(` http://localhost:7000/films/${movie.id}`,{
+    fetch(` https://json-api-yf7x.onrender.com/films${movie.id}`,{
         method:"DELETE"
     })
     .then(res=>res.json)
